@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 public class ClientA2{
 	
@@ -24,16 +25,26 @@ public class ClientA2{
 			out = new PrintWriter(clientSocket.getOutputStream(),true);
 			ir = new InputStreamReader(clientSocket.getInputStream());
 			in = new BufferedReader(ir);
-			out.println("init calc");
+			
+			Scanner input = new Scanner(System.in);
+			String id = input.next();
+			String moduleName = "Game Design";
+			
+			
+			out.println(id);
+			out.println(moduleName);
+			out.flush();
 			
 			
 			System.out.println("Server : " + in.readLine());
 		
 		}
 		catch(UnknownHostException e){
+			e.getMessage();
 			System.exit(1);
 		}
 		catch(IOException e){
+			e.getMessage();
 			System.exit(1);
 			
 		}

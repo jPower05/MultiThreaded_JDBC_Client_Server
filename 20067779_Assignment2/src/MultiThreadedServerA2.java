@@ -5,5 +5,6 @@ public class MultiThreadedServerA2{
 		
 		SocketServer s = new SocketServer();
 		s.runServer();
+		
 	}
 }
